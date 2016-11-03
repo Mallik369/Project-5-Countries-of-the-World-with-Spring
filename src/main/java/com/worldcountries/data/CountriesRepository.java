@@ -27,4 +27,6 @@ public class CountriesRepository {
                 .findFirst()
                 .orElseThrow(NotFoundException::new);
     }
+
+
 }
