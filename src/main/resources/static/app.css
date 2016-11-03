@@ -16,19 +16,30 @@ header h1 {
 	margin: 0;
 	padding: 10px 0;
 	font-weight: 300;
-	text-transform: lowercase;
+
 }
 
 header h1 a {
 	color: #fff;
 	text-decoration: none;
 }
+header h3 {
+	margin: 0;
+	padding: 10px 0;
+	font-weight: 300;
+	text-transform: lowercase;
+}
+
+header h3 a {
+	color: #fff;
+	text-decoration: none;
+}
+
 
 .container {
 	margin: 0;
 	padding: 10px;
 }
-
 .country {
 	box-sizing: border-box;
 	display: inline-block;
