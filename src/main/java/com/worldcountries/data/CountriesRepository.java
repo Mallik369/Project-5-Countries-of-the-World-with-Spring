@@ -8,6 +8,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Countries Repository Holds Default Content of Application
+ */
 @Component
 public class CountriesRepository {
     private static final List<Country> WORLD_COUNTRIES = Arrays.asList(
@@ -18,12 +21,19 @@ public class CountriesRepository {
             new Country("Italy",60674003,"Rome", Arrays.asList("Italian"),"italy")
     );
 
+    /**
+      * @return WORLD_COUNTRIES Content of Countries in Repository
+     */
     public static List<Country> getWorldCountries() {
-        return WORLD_COUNTRIES;
-    }
+    return WORLD_COUNTRIES;
+}
 
+    /**
+     * @param name name of country
+     * @return country country object requested by Controller
+     */
     public Country findCountryByName(String name) {
-        return WORLD_COUNTRIES.stream()
+    return WORLD_COUNTRIES.stream()
                 .filter(Country -> Country.getCountryName().equals(name))
                 .findFirst()
                 .orElseThrow(NotFoundException::new);
