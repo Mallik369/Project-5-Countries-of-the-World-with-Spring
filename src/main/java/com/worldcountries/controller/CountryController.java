@@ -38,7 +38,7 @@ public class CountryController {
      */
     @RequestMapping("/country/{slug}")
     public String country(@PathVariable String slug,ModelMap modelMap) {
-        Country country = countriesRepository.findCountryByName(slug);
+        Country country = countriesRepository.findCountryBySlug(slug);
         modelMap.put("country",country);
         return "country";
     }

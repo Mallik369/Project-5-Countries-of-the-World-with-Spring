@@ -29,12 +29,12 @@ public class CountriesRepository {
 }
 
     /**
-     * @param name name of country
+     * @param slug slug is combination of country name and countrycount
      * @return country country object requested by Controller
      */
-    public Country findCountryByName(String name) {
+    public Country findCountryBySlug(String slug) {
     return WORLD_COUNTRIES.stream()
-                .filter(Country -> Country.getCountryName().equals(name))
+                .filter(Country -> Country.getSlug().equals(slug))
                 .findFirst()
                 .orElseThrow(NotFoundException::new);
 
