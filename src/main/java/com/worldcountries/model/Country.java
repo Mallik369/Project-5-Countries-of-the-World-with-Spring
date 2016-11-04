@@ -1,9 +1,14 @@
 package com.worldcountries.model;
 
+import com.github.slugify.Slugify;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Country {
+    private static int countriesCount = 0;
+    private String slug;
+    private Slugify slugify = new Slugify();
     private String countryName;
     private int population;
     private String capitalCity;
@@ -11,11 +16,13 @@ public class Country {
     private String flag;
 
     public Country(String name, int population, String city, List<String> languages,String flag) {
+        countriesCount++;
         this.countryName = name;
         this.population = population;
         this.capitalCity = city;
         this.officialLanguages = languages;
         this.flag = flag;
+        slug = slugify.slugify(countryName+-countriesCount);
     }
 
     public String getCountryName() { return countryName; }
@@ -41,5 +48,9 @@ public class Country {
     public String getFlag() { return flag; }
 
     public void setFlag(String flag) { this.flag = flag; }
+
+    public String getSlug() { return slug; }
+
+    public void setSlug(String slug) { this.slug = slug; }
 }
 
