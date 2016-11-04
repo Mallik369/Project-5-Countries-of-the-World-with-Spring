@@ -32,13 +32,13 @@ public class CountryController {
     }
     /**
      * Maps to User URI Request: http://localhost:8080/country/Ecuador
-     * @param name holds the country name
+     * @param slug slug of the coutry name and its count
      * @param modelMap is POJO Object Provided to VIEW
      * @return country VIEW detailed view of Country selected by User
      */
-    @RequestMapping("/country/{name}")
-    public String country(@PathVariable String name,ModelMap modelMap) {
-        Country country = countriesRepository.findCountryByName(name);
+    @RequestMapping("/country/{slug}")
+    public String country(@PathVariable String slug,ModelMap modelMap) {
+        Country country = countriesRepository.findCountryByName(slug);
         modelMap.put("country",country);
         return "country";
     }
