@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Country {
-    private static int countriesCount = 0;
-    private String slug;
+    private static int countriesCount = 0; //keeps track of no of Countries in Repository and to Generate Unique Slug
+    private String slug;    // slug is computed combining countryName and countriesCount
     private Slugify slugify = new Slugify();
     private String countryName;
     private int population;
